@@ -9,7 +9,7 @@ export function FeedbackContentStep({
   feedbackType,
   onFeedbackRestartRequested,
 }: FeedbackContentStepProps) {
-  const [screenshop, setScreenshot] = useState<string | null>(null);
+  const [screenshot, setScreenshot] = useState<string | null>(null);
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
   return (
@@ -93,7 +93,10 @@ export function FeedbackContentStep({
             mt-2
         `}
         >
-          <ScreenshotButton onScreenshotTook={setScreenshot} />
+          <ScreenshotButton
+            screenshotImage={screenshot}
+            onScreenshotTook={setScreenshot}
+          />
           <button
             className={`
               p-2

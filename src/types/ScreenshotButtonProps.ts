@@ -1,3 +1,4 @@
 export interface ScreenshotButtonProps {
-  onScreenshotTook: (screenshot: string) => void;
+  onScreenshotTook: (screenshot: string | null) => void;
+  screenshotImage: string | null;
 }
