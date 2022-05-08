@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { CloseButton } from "./CloseButton";
-
 import { feedbackTypes } from "../mock/feedbackTypes";
 
+type FeedbackType = keyof typeof feedbackTypes;
+
 export function WidgetForm() {
+  const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+  console.log(feedbackType);
+
   return (
     <div
       className={`
@@ -29,18 +34,19 @@ export function WidgetForm() {
         <CloseButton />
       </header>
 
-      <div
-        className={`
+      {!feedbackType ? (
+        <div
+          className={`
           flex
           py-8
           gap-2
           w-full
       `}
-      >
-        {Object.entries(feedbackTypes).map(([key, value]) => {
-          return (
-            <button
-              className={`
+        >
+          {Object.entries(feedbackTypes).map(([key, value]) => {
+            return (
+              <button
+                className={`
                 bg-zinc-800
                 rounded-lg
                 py-5
@@ -56,15 +62,19 @@ export function WidgetForm() {
                 focus:border-brand-500
                 focus:outline-none
             `}
-              key={key}
-              type="button"
-            >
-              <img src={value.image.source} alt={value.image.alt} />
-              <span>{value.title}</span>
-            </button>
-          );
-        })}
-      </div>
+                key={key}
+                type="button"
+                onClick={() => setFeedbackType(key as FeedbackType)}
+              >
+                <img src={value.image.source} alt={value.image.alt} />
+                <span>{value.title}</span>
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <p>Hello World</p>
+      )}
 
       <footer
         className={`
