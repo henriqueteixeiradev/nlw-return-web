@@ -1,14 +1,5 @@
-function App() {
-  return (
-    <div className="bg-violet-500 py-5 flex justify-center items-center">
-      <h1
-        className="text-lg text-gray-50 font-bold
-      "
-      >
-        Hello World Maria
-      </h1>
-    </div>
-  );
-}
+import { Widget } from "./components/Widget";
 
-export default App;
+export function App() {
+  return <Widget />;
+}
