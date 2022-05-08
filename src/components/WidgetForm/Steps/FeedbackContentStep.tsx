@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { CloseButton } from "../../CloseButton";
 import { FeedbackContentStepProps } from "../../../types/FeedbackContentStepProps";
 import { feedbackTypes } from "../../../mock/feedbackTypes";
@@ -10,7 +10,17 @@ export function FeedbackContentStep({
   onFeedbackRestartRequested,
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [comment, setComment] = useState("");
+
   const feedbackTypeInfo = feedbackTypes[feedbackType];
+
+  function handleSubmitFeedback(event: FormEvent) {
+    event.preventDefault();
+    console.log({
+      screenshot,
+      comment,
+    });
+  }
 
   return (
     <>
@@ -61,6 +71,7 @@ export function FeedbackContentStep({
           my-4
           w-full
       `}
+        onSubmit={handleSubmitFeedback}
       >
         <textarea
           className={`
@@ -84,6 +95,7 @@ export function FeedbackContentStep({
           scrollbar-thin
         `}
           placeholder="Conte com detalhes o que está acontecendo..."
+          onChange={(event) => setComment(event.target.value)}
         />
 
         <footer
@@ -115,8 +127,12 @@ export function FeedbackContentStep({
               focus:ring-offset-zinc-900
               focus:ring-brand-500
               transition-colors
+              disabled:opacity-50
+              disabled:hover:bg-brand-500
+              disabled:cursor-not-allowed
           `}
             type="submit"
+            disabled={comment.length === 0}
           >
             Enviar Feedback
           </button>

@@ -9,7 +9,6 @@ export function ScreenshotButton({
   screenshotImage,
 }: ScreenshotButtonProps) {
   const [isTalkingScreenshot, setIsTalkingScreenshot] = useState(false);
-  console.log(screenshotImage);
 
   async function handleTakeScreenshot() {
     setIsTalkingScreenshot(true);
