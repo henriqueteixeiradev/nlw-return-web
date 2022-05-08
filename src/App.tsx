@@ -8,7 +8,7 @@ export function App() {
         h-screen
     `}
       style={{
-        backgroundImage: "url('https://source.unsplash.com/random')",
+        backgroundImage: "url('/img/bg_image.png')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
