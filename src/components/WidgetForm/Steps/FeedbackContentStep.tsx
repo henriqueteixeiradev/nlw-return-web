@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { CloseButton } from "../../CloseButton";
 import { FeedbackContentStepProps } from "../../../types/FeedbackContentStepProps";
 import { feedbackTypes } from "../../../mock/feedbackTypes";
-import { ArrowLeft, Camera } from "phosphor-react";
+import { ArrowLeft } from "phosphor-react";
+import { ScreenshotButton } from "../../ScreenshotButton";
 
 export function FeedbackContentStep({
   feedbackType,
   onFeedbackRestartRequested,
 }: FeedbackContentStepProps) {
+  const [screenshop, setScreenshot] = useState<string | null>(null);
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
   return (
@@ -90,30 +93,7 @@ export function FeedbackContentStep({
             mt-2
         `}
         >
-          <button
-            className={`
-              p-2
-              bg-zinc-800
-              rounded-md
-              border-transparent
-              hover:bg-zinc-700
-              transition-colors
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-offset-zinc-900
-              focus:ring-brand-500
-          `}
-            type="button"
-          >
-            <Camera
-              className={`
-                w-6
-                h-6
-            `}
-            />
-          </button>
-
+          <ScreenshotButton onScreenshotTook={setScreenshot} />
           <button
             className={`
               p-2
