@@ -1,3 +1,5 @@
+import { CloseButton } from "./CloseButton";
+
 export function WidgetForm() {
   return (
     <div
@@ -22,6 +24,7 @@ export function WidgetForm() {
         `}
       >
         <span>Deixe seu Feedback</span>
+        <CloseButton />
       </header>
 
       <p>Hello World</p>
