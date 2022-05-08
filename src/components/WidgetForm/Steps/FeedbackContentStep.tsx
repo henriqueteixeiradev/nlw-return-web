@@ -1,7 +1,7 @@
 import { CloseButton } from "../../CloseButton";
 import { FeedbackContentStepProps } from "../../../types/FeedbackContentStepProps";
 import { feedbackTypes } from "../../../mock/feedbackTypes";
-import { ArrowLeft } from "phosphor-react";
+import { ArrowLeft, Camera } from "phosphor-react";
 
 export function FeedbackContentStep({
   feedbackType,
@@ -82,6 +82,62 @@ export function FeedbackContentStep({
         `}
           placeholder="Conte com detalhes o que está acontecendo..."
         />
+
+        <footer
+          className={`
+            flex
+            gap-2
+            mt-2
+        `}
+        >
+          <button
+            className={`
+              p-2
+              bg-zinc-800
+              rounded-md
+              border-transparent
+              hover:bg-zinc-700
+              transition-colors
+              focus:outline-none
+              focus:ring-2
+              focus:ring-offset-2
+              focus:ring-offset-zinc-900
+              focus:ring-brand-500
+          `}
+            type="button"
+          >
+            <Camera
+              className={`
+                w-6
+                h-6
+            `}
+            />
+          </button>
+
+          <button
+            className={`
+              p-2
+              bg-brand-500
+              rounded-md
+              border-transparent
+              flex-1
+              flex
+              justify-center
+              items-center
+              text-sm
+              hover:bg-brand-300
+              focus:outline-none
+              focus:ring-2
+              focus:ring-offset-2
+              focus:ring-offset-zinc-900
+              focus:ring-brand-500
+              transition-colors
+          `}
+            type="submit"
+          >
+            Enviar Feedback
+          </button>
+        </footer>
       </form>
     </>
   );
