@@ -34,7 +34,8 @@ export function FeedbackContentStep({
             left-5
             absolute
             text-zinc-400
-            hover:text-zinc-100
+            dark:hover:text-zinc-100
+            hover:text-zinc-800
         `}
           type="button"
           onClick={onFeedbackRestartRequested}
@@ -83,7 +84,8 @@ export function FeedbackContentStep({
           min-h-[112px]
           text-sm
           placeholder-zinc-400
-          text-zinc-100
+          text-zinc-800
+          dark:text-zinc-100
           border-zinc-600
           bg-transparent
           rounded-md

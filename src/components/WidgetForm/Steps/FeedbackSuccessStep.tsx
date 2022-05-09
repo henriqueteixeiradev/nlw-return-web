@@ -50,12 +50,14 @@ export function FeedbackSuccessStep({
             py-2
             px-6
             mt-6
-            bg-zinc-800
+            dark:bg-zinc-800
+            bg-zinc-300
             rounded-md
             border-transparent
             text-sm
             leading-6
-            hover:bg-zinc-700
+            dark:hover:bg-zinc-700
+            hover:bg-zinc-400
             transition-colors
             focus:outline-none
             focus:ring-2

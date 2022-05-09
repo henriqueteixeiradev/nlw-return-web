@@ -48,7 +48,12 @@ export function ScreenshotButton({
         type="button"
         onClick={() => onScreenshotTook(null)}
       >
-        <Trash weight="fill" />
+        <Trash
+          className={`
+            fill-zinc-300
+        `}
+          weight="fill"
+        />
       </button>
     );
   }
@@ -57,16 +62,19 @@ export function ScreenshotButton({
     <button
       className={`
       p-2
-      bg-zinc-800
+      // bg-zinc-300
+      // dark:bg-zinc-800
       rounded-md
       border-transparent
-      hover:bg-zinc-700
+      dark:hover:bg-zinc-700
+      hover:bg-zinc-400
       transition-colors
       focus:outline-none
       focus:ring-2
       focus:ring-offset-2
       focus:ring-offset-zinc-900
       focus:ring-brand-500
+
   `}
       type="button"
       onClick={handleTakeScreenshot}
@@ -78,6 +86,7 @@ export function ScreenshotButton({
           className={`
             w-6
             h-6
+
         `}
         />
       )}

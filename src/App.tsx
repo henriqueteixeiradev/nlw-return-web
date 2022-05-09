@@ -6,6 +6,7 @@ export function App() {
       className={`
         w-full
         h-screen
+        dark
     `}
       style={{
         backgroundImage: "url('/img/bg_image.png')",

@@ -9,7 +9,8 @@ export function CloseButton() {
         right-5
         absolute
         text-zinc-400
-        hover:text-zinc-100
+        dark:hover:text-zinc-100
+        hover:text-zinc-800
     `}
       title="Fechar formuário de feedback"
     >

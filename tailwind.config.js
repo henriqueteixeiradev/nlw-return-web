@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.tsx"],
+  darkMode: "media",
   theme: {
     extend: {
       colors: {
