@@ -1,1 +1,1 @@
-<a href="https://nlw-return-web-nu.vercel.app/">Vercel</a>
+<a href="https://nlw-return-web-nu.vercel.app/" target="_blank">Vercel</a>
